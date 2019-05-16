@@ -42,9 +42,9 @@ class AppOrPrepp {
 			new AppOrPrepp_Admin();
 		}
 
-		add_filter( 'the_content', [ $this, 'the_content' ], 900 );
+		add_filter( 'the_content', array( $this, 'the_content' ) );
 
-		add_action( 'plugins_loaded', [ $this, 'load_text_domain' ], 50 );
+		add_action( 'plugins_loaded', array( $this, 'load_text_domain' ), 50 );
 	}
 
 	/**
@@ -62,24 +62,18 @@ class AppOrPrepp {
 	 * @return string
 	 */
 	public function the_content( $content ) {
-		$post      = get_post();
+		$post = get_post();
 		$post_type = get_post_type( $post );
-		$prepend   = get_option( 'prepend_' . $post_type, '' );
-		$append    = get_option( 'append_' . $post_type, '' );
+		$prepend = get_option( 'prepend_' . $post_type, '' );
+		$append = get_option( 'append_' . $post_type, '' );
 
 		if ( $prepend ) {
-			// Avoid an infinite loop by toggling the prepend filter.
-			remove_filter( 'the_content', [ $this, 'prepend_the_content' ], 900 );
-			$content = apply_filters( 'the_content', $prepend ) . $content;
-			add_filter( 'the_content', [ $this, 'prepend_the_content' ], 900 );
+			$content = wpautop( $prepend ) . $content;
 		}
 
 		if ( $append ) {
-			remove_filter( 'the_content', [ $this, 'append_the_content' ], 910 );
-			$content = $content . apply_filters( 'the_content', $append );
-			add_filter( 'the_content', [ $this, 'append_the_content' ], 910 );
+			$content = $content . wpautop( $append );
 		}
-
 		return $content;
 	}
 }
