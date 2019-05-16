@@ -3,7 +3,7 @@ Contributors: igmoweb
 Tags: content,posts,custom post type
 Requires at least: 4.0
 Tested up to: 5.2
-Stable tag: 1.2
+Stable tag: 1.1.1
 License: GPLv2 or later
 
 Add content before or after every post, page or Custom Post Type
