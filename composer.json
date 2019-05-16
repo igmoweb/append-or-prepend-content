@@ -1,0 +1,19 @@
+{
+    "name": "ignacio/append-or-prepend-content",
+    "authors": [
+        {
+            "name": "Ignacio Cruz",
+            "email": "igmoweb@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
+        "phpcompatibility/phpcompatibility-wp": "^2.0",
+        "phpunit/phpunit": "^6.5",
+        "wp-coding-standards/wpcs": "^2.1"
+    },
+    "scripts": {
+        "phpcs:fix": "phpcbf -s --standard=phpcs.xml .",
+        "phpcs": "phpcs -s --standard=phpcs.xml ."
+    }
+}
