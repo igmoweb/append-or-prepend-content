@@ -38,7 +38,7 @@ class AppOrPrepp {
 	 */
 	public function __construct() {
 		if ( is_admin() ) {
-			include_once plugin_dir_path( __FILE__ ) . '/admin.php';
+			include_once plugin_dir_path( __FILE__ ) . '/class-apporprepp-admin.php';
 			new AppOrPrepp_Admin();
 		}
 

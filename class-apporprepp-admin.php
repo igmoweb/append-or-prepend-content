@@ -1,14 +1,20 @@
-<?php
+<?php //phpcs:ignore Squiz.Commenting.FileComment.Missing
 
 /**
  * Manage all the plugin admin side
  */
 class AppOrPrepp_Admin {
 
+	/**
+	 * AppOrPrepp_Admin constructor.
+	 */
 	public function __construct() {
 		add_action( 'admin_init', array( $this, 'register_fields' ) );
 	}
 
+	/**
+	 * Register settings fields
+	 */
 	public function register_fields() {
 		add_settings_section(
 			'apporprep_section',
@@ -25,7 +31,10 @@ class AppOrPrepp_Admin {
 
 			add_settings_field(
 				'prepend_' . $post_type,
-				'<label for="prepend_' . $post_type . '">' . sprintf( _x( 'Prepend content to %s', '%s is the post type', 'apporprepp' ), $object->labels->name ) . '</label>',
+				'<label for="prepend_' . $post_type . '">'
+				// translators: %s is the post type.
+				. sprintf( _x( 'Prepend content to %s', '%s is the post type', 'apporprepp' ), $object->labels->name )
+				. '</label>',
 				array( $this, 'prepend_html' ),
 				'writing',
 				'apporprep_section',
@@ -34,7 +43,10 @@ class AppOrPrepp_Admin {
 
 			add_settings_field(
 				'append_' . $post_type,
-				'<label for="prepend_' . $post_type . '">' . sprintf( _x( 'Append content to %s', '%s is the post type', 'apporprepp' ), $object->labels->name ) . '</label>',
+				'<label for="prepend_' . $post_type . '">'
+				// translators: %s is the post type.
+				. sprintf( _x( 'Append content to %s', '%s is the post type', 'apporprepp' ), $object->labels->name )
+				. '</label>',
 				array( $this, 'append_html' ),
 				'writing',
 				'apporprep_section',
@@ -43,7 +55,10 @@ class AppOrPrepp_Admin {
 
 			add_settings_field(
 				'display_in_archive_' . $post_type,
-				'<label for="display_in_archive_' . $post_type . '">' . sprintf( _x( 'Display content for %s in the archive, search or author pages', '%s is the post type', 'apporprepp' ), $object->labels->name ) . '</label>',
+				'<label for="display_in_archive_' . $post_type . '">'
+				// translators: %s is the post type.
+				. sprintf( _x( 'Display content for %s in the archive, search or author pages', '%s is the post type', 'apporprepp' ), $object->labels->name )
+				. '</label>',
 				array( $this, 'display_in_archive' ),
 				'writing',
 				'apporprep_section',
@@ -79,13 +94,19 @@ class AppOrPrepp_Admin {
 
 	}
 
+	/**
+	 * Display the header text
+	 */
 	public function header_html() {
 		?>
-		<p><?php _e( 'Allows you to append or prepend content to any Post Type on your site. Shortcodes allowed.', 'apporprepp' ); ?></p>
+		<p><?php esc_html_e( 'Allows you to append or prepend content to any Post Type on your site. Shortcodes allowed.', 'apporprepp' ); ?></p>
 		<?php
 
 	}
 
+	/**
+	 * Display a separator line.
+	 */
 	public function separator() {
 		?>
 		<hr>
@@ -94,6 +115,8 @@ class AppOrPrepp_Admin {
 
 	/**
 	 * HTML for extra settings
+	 *
+	 * @param array $args Arguments.
 	 */
 	public function prepend_html( $args ) {
 		$post_type = $args['post_type'];
@@ -110,6 +133,11 @@ class AppOrPrepp_Admin {
 		);
 	}
 
+	/**
+	 * Render display in archive option.
+	 *
+	 * @param array $args arguments.
+	 */
 	public function display_in_archive( $args ) {
 		$post_type = $args['post_type'];
 		$value     = get_option( 'display_in_archive_' . $post_type, true );
@@ -118,6 +146,11 @@ class AppOrPrepp_Admin {
 		<?php
 	}
 
+	/**
+	 * Render append option textarea.
+	 *
+	 * @param array $args Arguments.
+	 */
 	public function append_html( $args ) {
 		$post_type = $args['post_type'];
 		$value     = get_option( 'append_' . $post_type, '' );
@@ -133,11 +166,25 @@ class AppOrPrepp_Admin {
 		);
 	}
 
+	/**
+	 * Validate the append or prepend setting.
+	 *
+	 * @param string $value Content value.
+	 *
+	 * @return string
+	 */
 	public function validate( $value ) {
 		$value = wp_kses( $value, wp_kses_allowed_html( 'post' ) );
 		return $value;
 	}
 
+	/**
+	 * Validate the display in archive option.
+	 *
+	 * @param string $value new value.
+	 *
+	 * @return bool
+	 */
 	public function validate_display( $value ) {
 		return (bool) $value;
 	}
