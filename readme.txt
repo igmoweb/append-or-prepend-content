@@ -1,9 +1,9 @@
 === Append or Prepend Content ===
 Contributors: igmoweb
 Tags: content,posts,custom post type
-Requires at least: 4.0
-Tested up to: 5.2
-Stable tag: 1.1.1
+Requires at least: %%requires%%
+Tested up to: %%testedupto%%
+Stable tag: %%version%%
 License: GPLv2 or later
 
 Add content before or after every post, page or Custom Post Type
@@ -21,6 +21,9 @@ Append or Prepend Content allows you to append or prepend content to any Post Ty
 1. **Plugin Settings**
 
 == Changelog ==
+= 1.2 =
+Added option to display/hide content in archive pages
+
 = 1.1.1 =
 Updated compatibility with WordPress 5.2
 

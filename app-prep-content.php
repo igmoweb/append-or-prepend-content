@@ -4,7 +4,7 @@
  * Plugin Name: Append or Prepend Content
  * Description: Add content before or after every post, page or Custom Post Type
  * Plugin URI: https://wordpress.org/plugins/app-prep-content
- * Version: 1.1.1
+ * Version: %%version%%
  * Author: igmoweb
  * Author URI: http://igmoweb.com
  * Text Domain: apporprepp
@@ -65,7 +65,7 @@ class AppOrPrepp {
 		$post      = get_post();
 		$post_type = get_post_type( $post );
 		if ( is_archive() || is_search() ) {
-			$display_in_archive = get_option( 'display_in_archive_' . $post_type, true );
+			$display_in_archive = absint( get_option( 'display_in_archive_' . $post_type, 1 ) );
 			if ( ! $display_in_archive ) {
 				return $content;
 			}

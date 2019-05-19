@@ -51,31 +51,30 @@ module.exports = function( grunt ) {
 			},
 		},
 
-		search: {
-			files: {
-				src: ['<%= pkg.main %>']
-			},
-			options: {
-				logFile: '/tmp/log-search.log',
-				searchString: /^[ \t\/*#@]*Version:(.*)$/mig,
-				onMatch: function(match) {
-					var regExp = /^[ \t\/*#@]*Version:(.*)$/mig;
-					var groupedMatches = regExp.exec( match.match );
-					var versionFound = groupedMatches[1].trim();
-					if ( versionFound !== grunt.file.readJSON('package.json').version ) {
-						grunt.fail.fatal("Plugin version does not match with package.json version. Please, fix.");
+		"regex-replace": {
+			placeholders: { //specify a target with any name
+				src: [
+					'./build/readme.txt',
+					'./build/app-prep-content.php',
+				],
+				actions: [
+					{
+						name: 'version',
+						search: '%%version%%',
+						replace: '<%= pkg.version %>',
+						flags: 'g'
+					},{
+						name: 'testedupto',
+						search: '%%testedupto%%',
+						replace: '<%= pkg.testedupto %>',
+						flags: 'g'
+					},{
+						name: 'requires',
+						search: '%%requires%%',
+						replace: '<%= pkg.requires %>',
+						flags: 'g'
 					}
-				},
-				onComplete: function( matches ) {
-					if ( ! matches.numMatches ) {
-						if ( ! grunt.file.readJSON('package.json').main ) {
-							grunt.fail.fatal("main field is not defined in package.json. Please, add the plugin main file on that field.");
-						}
-						else {
-							grunt.fail.fatal("Version Plugin header not found in " + grunt.file.readJSON('package.json').main + " file or the file does not exist" );
-						}
-					}
-				}
+				]
 			}
 		},
 
@@ -111,5 +110,5 @@ module.exports = function( grunt ) {
 	} );
 
 	grunt.registerTask( 'default', [ 'checktextdomain', 'makepot', 'copy', 'shell' ] );
-	grunt.registerTask( 'version-compare', [ 'search' ] );
+	grunt.registerTask( 'replace-placeholders', [ 'regex-replace:placeholders' ] );
 }

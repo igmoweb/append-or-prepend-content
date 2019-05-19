@@ -140,9 +140,9 @@ class AppOrPrepp_Admin {
 	 */
 	public function display_in_archive( $args ) {
 		$post_type = $args['post_type'];
-		$value     = get_option( 'display_in_archive_' . $post_type, true );
+		$value     = absint( get_option( 'display_in_archive_' . $post_type, 1 ) );
 		?>
-		<input type="checkbox" name="display_in_archive_<?php echo esc_attr( $post_type ); ?>" <?php checked( $value ); ?>>
+		<input type="checkbox" name="display_in_archive_<?php echo esc_attr( $post_type ); ?>" id="display_in_archive_<?php echo esc_attr( $post_type ); ?>" <?php checked( 1, $value ); ?> value="1">
 		<?php
 	}
 
@@ -183,9 +183,9 @@ class AppOrPrepp_Admin {
 	 *
 	 * @param string $value new value.
 	 *
-	 * @return bool
+	 * @return int
 	 */
 	public function validate_display( $value ) {
-		return (bool) $value;
+		return absint( $value );
 	}
 }
