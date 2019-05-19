@@ -79,7 +79,7 @@ module.exports = function( grunt ) {
 		},
 
 		shell: {
-			command: './bin/build.sh <%= pkg.version %>'
+			command: 'svn co https://plugins.svn.wordpress.org/append-or-prepend-content svn'
 		},
 
 		copy: {
@@ -106,9 +106,55 @@ module.exports = function( grunt ) {
 					},
 				],
 			},
+			svn: {
+				files: [
+					{
+						expand: true,
+						src: [
+							'**/*.*'
+						],
+						dest: 'svn/trunk/',
+						cwd: 'build/'
+					},
+					{
+						expand: true,
+						src: [
+							'**/*.*'
+						],
+						dest: 'svn/tags/<%= pkg.version %>',
+						cwd: 'build/'
+					},
+					{
+						expand: true,
+						src: [
+							'**/*.*'
+						],
+						dest: 'svn/assets/',
+						cwd: 'assets-wporg/'
+					}
+				]
+			}
 		},
+		clean: {
+			build: [
+				'build'
+			],
+			svn: [
+				'svn/tags/<%= pkg.version %>',
+				'svn/trunk/',
+				'svn/assets/'
+			],
+		}
 	} );
 
-	grunt.registerTask( 'default', [ 'checktextdomain', 'makepot', 'copy', 'shell' ] );
-	grunt.registerTask( 'replace-placeholders', [ 'regex-replace:placeholders' ] );
+	grunt.registerTask( 'default', [
+		'checktextdomain',
+		'makepot',
+		'clean:build',
+		'copy',
+		'regex-replace:placeholders',
+		'shell',
+		'clean:svn',
+		'copy:svn'
+	] );
 }

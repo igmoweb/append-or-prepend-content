@@ -11,8 +11,9 @@ fi
 rm -rf svn
 svn co https://plugins.svn.wordpress.org/append-or-prepend-content svn
 
-rm -rf svn/trunk
 rm -rf svn/assets
+
+grunt replace-placeholders
 
 cp -r build svn/trunk
 cp -r assets-wporg svn/assets
