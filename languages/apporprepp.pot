@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Append or Prepend Content 1.1.1\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/append-or-prepend-content\n"
-"POT-Creation-Date: 2019-05-16 19:23:01+00:00\n"
+"POT-Creation-Date: 2019-05-16 19:27:30+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,11 +14,13 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 1.0.3\n"
 
-#: admin.php:15
+#: admin.php:15 build/admin.php:15 svn/tags/1.0/admin.php:15
+#: svn/tags/1.1/admin.php:15 svn/tags/1.1.1/admin.php:15 svn/trunk/admin.php:15
 msgid "Append or Prepend Content Settings"
 msgstr ""
 
-#: admin.php:61
+#: admin.php:61 build/admin.php:61 svn/tags/1.0/admin.php:61
+#: svn/tags/1.1/admin.php:61 svn/tags/1.1.1/admin.php:61 svn/trunk/admin.php:61
 msgid ""
 "Allows you to append or prepend content to any Post Type on your site. "
 "Shortcodes allowed."
@@ -44,12 +46,14 @@ msgstr ""
 msgid "http://igmoweb.com"
 msgstr ""
 
-#: admin.php:28
+#: admin.php:28 build/admin.php:28 svn/tags/1.0/admin.php:28
+#: svn/tags/1.1/admin.php:28 svn/tags/1.1.1/admin.php:28 svn/trunk/admin.php:28
 msgctxt "%s is the post type"
 msgid "Prepend content to %s"
 msgstr ""
 
-#: admin.php:37
+#: admin.php:37 build/admin.php:37 svn/tags/1.0/admin.php:37
+#: svn/tags/1.1/admin.php:37 svn/tags/1.1.1/admin.php:37 svn/trunk/admin.php:37
 msgctxt "%s is the post type"
 msgid "Append content to %s"
 msgstr ""

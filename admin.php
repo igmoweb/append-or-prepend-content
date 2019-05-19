@@ -41,6 +41,23 @@ class AppOrPrepp_Admin {
 				array( 'post_type' => $post_type )
 			);
 
+			add_settings_field(
+				'display_in_archive_' . $post_type,
+				'<label for="display_in_archive_' . $post_type . '">' . sprintf( _x( 'Display content for %s in the archive, search or author pages', '%s is the post type', 'apporprepp' ), $object->labels->name ) . '</label>',
+				array( $this, 'display_in_archive' ),
+				'writing',
+				'apporprep_section',
+				array( 'post_type' => $post_type )
+			);
+
+			add_settings_field(
+				'apporprep_separator_' . $post_type,
+				'',
+				array( $this, 'separator' ),
+				'writing',
+				'apporprep_section'
+			);
+
 			register_setting(
 				'writing',
 				'prepend_' . $post_type,
@@ -52,6 +69,12 @@ class AppOrPrepp_Admin {
 				'append_' . $post_type,
 				array( $this, 'validate' )
 			);
+
+			register_setting(
+				'writing',
+				'display_in_archive_' . $post_type,
+				array( $this, 'validate_display' )
+			);
 		}
 
 	}
@@ -61,6 +84,12 @@ class AppOrPrepp_Admin {
 		<p><?php _e( 'Allows you to append or prepend content to any Post Type on your site. Shortcodes allowed.', 'apporprepp' ); ?></p>
 		<?php
 
+	}
+
+	public function separator() {
+		?>
+		<hr>
+		<?php
 	}
 
 	/**
@@ -81,6 +110,14 @@ class AppOrPrepp_Admin {
 		);
 	}
 
+	public function display_in_archive( $args ) {
+		$post_type = $args['post_type'];
+		$value     = get_option( 'display_in_archive_' . $post_type, true );
+		?>
+		<input type="checkbox" name="display_in_archive_<?php echo esc_attr( $post_type ); ?>" <?php checked( $value ); ?>>
+		<?php
+	}
+
 	public function append_html( $args ) {
 		$post_type = $args['post_type'];
 		$value     = get_option( 'append_' . $post_type, '' );
@@ -99,6 +136,9 @@ class AppOrPrepp_Admin {
 	public function validate( $value ) {
 		$value = wp_kses( $value, wp_kses_allowed_html( 'post' ) );
 		return $value;
+	}
 
+	public function validate_display( $value ) {
+		return (bool) $value;
 	}
 }

@@ -42,9 +42,9 @@ class AppOrPrepp {
 			new AppOrPrepp_Admin();
 		}
 
-		add_filter( 'the_content', array( $this, 'the_content' ) );
+		add_filter( 'the_content', [ $this, 'the_content' ] );
 
-		add_action( 'plugins_loaded', array( $this, 'load_text_domain' ), 50 );
+		add_action( 'plugins_loaded', [ $this, 'load_text_domain' ], 50 );
 	}
 
 	/**
@@ -62,10 +62,16 @@ class AppOrPrepp {
 	 * @return string
 	 */
 	public function the_content( $content ) {
-		$post = get_post();
+		$post      = get_post();
 		$post_type = get_post_type( $post );
+		if ( is_archive() || is_search() ) {
+			$display_in_archive = get_option( 'display_in_archive_' . $post_type, true );
+			if ( ! $display_in_archive ) {
+				return $content;
+			}
+		}
 		$prepend = get_option( 'prepend_' . $post_type, '' );
-		$append = get_option( 'append_' . $post_type, '' );
+		$append  = get_option( 'append_' . $post_type, '' );
 
 		if ( $prepend ) {
 			$content = wpautop( $prepend ) . $content;
@@ -74,6 +80,7 @@ class AppOrPrepp {
 		if ( $append ) {
 			$content = $content . wpautop( $append );
 		}
+
 		return $content;
 	}
 }
