@@ -4,26 +4,32 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Append or Prepend Content 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/app-prep-content\n"
-"POT-Creation-Date: 2019-05-19 14:28:20+00:00\n"
+"POT-Creation-Date: 2016-03-17 10:30+0100\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2019-05-19 14:35+0000\n"
+"PO-Revision-Date: 2019-05-19 14:34+0000\n"
 "Last-Translator: admin <admin@local.test>\n"
 "Language-Team: Spanish (Spain)\n"
 "X-Generator: Loco https://localise.biz/\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Language: es_ES"
 
-#: build/class-apporprepp-admin.php:21 class-apporprepp-admin.php:21
-#: svn/tags/1.0/admin.php:15 svn/tags/1.1/admin.php:15
-#: svn/tags/1.1.1/admin.php:15 svn/trunk/admin.php:15
+#: admin.php:15
 msgid "Append or Prepend Content Settings"
 msgstr "Opciones de Append o Prepend Content"
 
-#: build/class-apporprepp-admin.php:102 class-apporprepp-admin.php:102
-#: svn/tags/1.0/admin.php:61 svn/tags/1.1/admin.php:61
-#: svn/tags/1.1.1/admin.php:61 svn/trunk/admin.php:61
+#: admin.php:28
+msgctxt "%s is the post type"
+msgid "Prepend content to %s"
+msgstr "Agregar contenido previo a %s"
+
+#: admin.php:37
+msgctxt "%s is the post type"
+msgid "Append content to %s"
+msgstr "Agregar contenido a %s"
+
+#: admin.php:61
 msgid ""
 "Allows you to append or prepend content to any Post Type on your site. "
 "Shortcodes allowed."
@@ -52,25 +58,3 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "http://igmoweb.com"
 msgstr ""
-
-#: build/class-apporprepp-admin.php:36 class-apporprepp-admin.php:36
-#: svn/tags/1.0/admin.php:28 svn/tags/1.1/admin.php:28
-#: svn/tags/1.1.1/admin.php:28 svn/trunk/admin.php:28
-msgctxt "%s is the post type"
-msgid "Prepend content to %s"
-msgstr "Agregar contenido previo a %s"
-
-#: build/class-apporprepp-admin.php:48 class-apporprepp-admin.php:48
-#: svn/tags/1.0/admin.php:37 svn/tags/1.1/admin.php:37
-#: svn/tags/1.1.1/admin.php:37 svn/trunk/admin.php:37
-msgctxt "%s is the post type"
-msgid "Append content to %s"
-msgstr "Agregar contenido a %s"
-
-#. translators: %s is the post type.
-#: build/class-apporprepp-admin.php:60 class-apporprepp-admin.php:60
-msgctxt "%s is the post type"
-msgid "Display content for %s in the archive, search or author pages"
-msgstr ""
-"Muestra contenido para el tipo %s en las páginas de archivo búsqueda o "
-"páginas de autor"
