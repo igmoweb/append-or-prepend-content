@@ -1,44 +1,40 @@
 {
-  "name": "append-or-prepend-content",
-  "version": "1.2.0",
-  "description": "=== Append or Prepend Content === Contributors: igmoweb Tags: content,posts,custom post type Requires at least: 4.0 Tested up to: 5.2 Stable tag: 1.2 License: GPLv2 or later",
-  "main": "app-prep-content.php",
-  "scripts": {
-    "postinstall": "./bin/setup.sh",
-    "build": "grunt",
-    "phpcs": "./bin/composer.sh run-script phpcs",
-    "phpcs:fix": "./bin/composer.sh run-script phpcs:fix"
-  },
-  "author": "Ignacio Cruz <igmoweb@gmail.com>",
-  "license": "ISC",
-  "devDependencies": {
-    "grunt": "^1.0.4",
-    "grunt-checktextdomain": "^1.0.1",
-    "grunt-contrib-clean": "^2.0.0",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-regex-replace": "^0.4.0",
-    "grunt-replace": "^1.0.1",
-    "grunt-search": "^0.1.8",
-    "grunt-shell": "^3.0.1",
-    "grunt-wp-i18n": "^1.0.3",
-    "husky": "^2.3.0",
-    "lint-staged": "^8.1.7",
-    "load-grunt-tasks": "^4.0.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "relative": true,
-    "linters": {
-      "**/*.php": [
-        "./bin/composer.sh run-script phpcs:fix",
-        "git add"
-      ]
-    }
-  },
-  "testedupto": "5.2.1",
-  "requires": "4.0"
+	"name": "append-or-prepend-content",
+	"version": "1.2.0",
+	"description": "=== Append or Prepend Content === Contributors: igmoweb Tags: content,posts,custom post type Requires at least: 4.0 Tested up to: 5.2 Stable tag: 1.2 License: GPLv2 or later",
+	"main": "app-prep-content.php",
+	"scripts": {
+		"build": "grunt",
+		"phpcs": "./bin/composer.sh run-script phpcs",
+		"phpcs:fix": "./bin/composer.sh run-script phpcs:fix"
+	},
+	"author": "Ignacio Cruz <igmoweb@gmail.com>",
+	"license": "ISC",
+	"devDependencies": {
+		"grunt": "^1.0.4",
+		"grunt-checktextdomain": "^1.0.1",
+		"grunt-contrib-clean": "^2.0.0",
+		"grunt-contrib-copy": "^1.0.0",
+		"grunt-regex-replace": "^0.4.0",
+		"grunt-replace": "^1.0.1",
+		"grunt-search": "^0.1.8",
+		"grunt-shell": "^3.0.1",
+		"grunt-wp-i18n": "^1.0.3",
+		"husky": "^3.1.0",
+		"lint-staged": "^9.5.0",
+		"load-grunt-tasks": "^5.1.0"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"**/*.php": [
+			"./bin/composer.sh run-script phpcs:fix",
+			"git add"
+		]
+	},
+	"testedupto": "5.2.1",
+	"requires": "4.0"
 }
