@@ -74,3 +74,9 @@ msgid "Display content for %s in the archive, search or author pages"
 msgstr ""
 "Muestra contenido para el tipo %s en las páginas de archivo, búsqueda o "
 "páginas de autor"
+
+#. translators: %s is the post type.
+#: build/class-apporprepp-admin.php:72 class-apporprepp-admin.php:72
+msgid "Display content only when viewing a single post"
+msgstr ""
+"Muestra contenido sólo cuando se visualiza un Post particular"
