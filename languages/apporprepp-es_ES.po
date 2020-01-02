@@ -77,6 +77,7 @@ msgstr ""
 
 #. translators: %s is the post type.
 #: build/class-apporprepp-admin.php:72 class-apporprepp-admin.php:72
-msgid "Display content only when viewing a single post"
+msgctxt "%s is the post type"
+msgid "Display content only when viewing a single %s"
 msgstr ""
-"Muestra contenido sólo cuando se visualiza un Post particular"
+"Muestra contenido sólo cuando se visualiza un %s particular"

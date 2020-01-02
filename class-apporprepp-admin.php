@@ -65,24 +65,16 @@ class AppOrPrepp_Admin {
 				array( 'post_type' => $post_type )
 			);
 
-			if ( $post_type === "post" ) {
-				add_settings_field(
-					'display_if_single_post',
-					'<label for="display_if_single_post">'
-					. sprintf( __( 'Display content only when viewing a single post', 'apporprepp' ) )
-					. '</label>',
-					array( $this, 'display_if_single' ),
-					'writing',
-					'apporprep_section',
-					array( 'post_type' => 'post' )
-				);
-
-				register_setting(
-					'writing',
-					'display_if_single_post',
-					array( $this, 'validate_display' )
-				);
-			}
+			add_settings_field(
+				'display_if_single_' . $post_type . '',
+				'<label for="display_if_single_' . $post_type . '">'
+				. sprintf( _x( 'Display content only when viewing a single %s', '%s is the post type', 'apporprepp' ), $object->labels->name )
+				. '</label>',
+				array( $this, 'display_if_single' ),
+				'writing',
+				'apporprep_section',
+				array( 'post_type' => $post_type )
+			);
 
 			add_settings_field(
 				'apporprep_separator_' . $post_type,
@@ -107,6 +99,12 @@ class AppOrPrepp_Admin {
 			register_setting(
 				'writing',
 				'display_in_archive_' . $post_type,
+				array( $this, 'validate_display' )
+			);
+
+			register_setting(
+				'writing',
+				'display_if_single_' . $post_type,
 				array( $this, 'validate_display' )
 			);
 		}
