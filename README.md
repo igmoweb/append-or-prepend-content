@@ -4,7 +4,7 @@ Repository for Append or Prepend Content Plugin for WordPress: https://wordpress
 
 ## Requirements
 
-- [Docker](https://www.docker.com/products/docker-desktop)
+- [Composer](https://getcomposer.org/)
 - [node and npm](https://nodejs.org/es/). Recommended to use [nvm](https://github.com/nvm-sh/nvm)
 
 ## Development process

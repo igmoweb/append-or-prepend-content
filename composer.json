@@ -13,7 +13,7 @@
         "wp-coding-standards/wpcs": "^2.1"
     },
     "scripts": {
-        "phpcs:fix": "phpcbf -s --standard=phpcs.xml .",
-        "phpcs": "phpcs -s --standard=phpcs.xml ."
+        "phpcs:fix": "./vendor/bin/phpcbf --standard=phpcs.xml .",
+        "phpcs": "./vendor/bin/phpcs --standard=phpcs.xml ."
     }
 }
