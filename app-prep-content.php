@@ -77,6 +77,10 @@ class AppOrPrepp {
 			return $content;
 		}
 
+		if ( ! apply_filters( 'app_or_prepend.display_content', true ) ) {
+			return $content;
+		}
+
 		$prepend = get_option( 'prepend_' . $post_type, '' );
 		$append  = get_option( 'append_' . $post_type, '' );
 

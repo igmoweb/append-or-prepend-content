@@ -37,8 +37,8 @@ define( 'WP_DEBUG', true );
 // These tests will DROP ALL TABLES in the database with the prefix named below.
 // DO NOT use a production database or one that is shared with something else.
 
-define( 'DB_NAME', 'WordPress' );
-define( 'DB_USER', 'WordPress' );
+define( 'DB_NAME', 'wordpress' );
+define( 'DB_USER', 'wordpress' );
 define( 'DB_PASSWORD', 'password' );
 define( 'DB_HOST', 'mysql' );
 define( 'DB_CHARSET', 'utf8' );
@@ -50,14 +50,14 @@ define( 'DB_COLLATE', '' );
  * Change these to different unique phrases!
  * You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}
  */
-define( 'AUTH_KEY', 'put your unique phrase here' );
-define( 'SECURE_AUTH_KEY', 'put your unique phrase here' );
-define( 'LOGGED_IN_KEY', 'put your unique phrase here' );
-define( 'NONCE_KEY', 'put your unique phrase here' );
-define( 'AUTH_SALT', 'put your unique phrase here' );
+define( 'AUTH_KEY',         'put your unique phrase here' );
+define( 'SECURE_AUTH_KEY',  'put your unique phrase here' );
+define( 'LOGGED_IN_KEY',    'put your unique phrase here' );
+define( 'NONCE_KEY',        'put your unique phrase here' );
+define( 'AUTH_SALT',        'put your unique phrase here' );
 define( 'SECURE_AUTH_SALT', 'put your unique phrase here' );
-define( 'LOGGED_IN_SALT', 'put your unique phrase here' );
-define( 'NONCE_SALT', 'put your unique phrase here' );
+define( 'LOGGED_IN_SALT',   'put your unique phrase here' );
+define( 'NONCE_SALT',       'put your unique phrase here' );
 
 $table_prefix = 'wptests_';   // Only numbers, letters, and underscores please!
 
