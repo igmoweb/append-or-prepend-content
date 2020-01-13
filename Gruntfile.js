@@ -157,4 +157,6 @@ module.exports = function( grunt ) {
 		'clean:svn',
 		'copy:svn'
 	] );
+
+	grunt.registerTask( 'dopot', 'makepot' );
 }
