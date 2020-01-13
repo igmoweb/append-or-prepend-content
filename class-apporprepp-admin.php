@@ -66,6 +66,17 @@ class AppOrPrepp_Admin {
 			);
 
 			add_settings_field(
+				'display_if_single_' . $post_type . '',
+				'<label for="display_if_single_' . $post_type . '">'
+				. sprintf( _x( 'Display content only when viewing a single %s', '%s is the post type', 'apporprepp' ), $object->labels->name )
+				. '</label>',
+				array( $this, 'display_if_single' ),
+				'writing',
+				'apporprep_section',
+				array( 'post_type' => $post_type )
+			);
+
+			add_settings_field(
 				'apporprep_separator_' . $post_type,
 				'',
 				array( $this, 'separator' ),
@@ -88,6 +99,12 @@ class AppOrPrepp_Admin {
 			register_setting(
 				'writing',
 				'display_in_archive_' . $post_type,
+				array( $this, 'validate_display' )
+			);
+
+			register_setting(
+				'writing',
+				'display_if_single_' . $post_type,
 				array( $this, 'validate_display' )
 			);
 		}
@@ -143,6 +160,19 @@ class AppOrPrepp_Admin {
 		$value     = absint( get_option( 'display_in_archive_' . $post_type, 1 ) );
 		?>
 		<input type="checkbox" name="display_in_archive_<?php echo esc_attr( $post_type ); ?>" id="display_in_archive_<?php echo esc_attr( $post_type ); ?>" <?php checked( 1, $value ); ?> value="1">
+		<?php
+	}
+
+	/**
+	 * Render display in archive option.
+	 *
+	 * @param array $args arguments.
+	 */
+	public function display_if_single( $args ) {
+		$post_type = $args['post_type'];
+		$value     = absint( get_option( 'display_if_single_' . $post_type, 1 ) );
+		?>
+		<input type="checkbox" name="display_if_single_<?php echo esc_attr( $post_type ); ?>" id="display_if_single_<?php echo esc_attr( $post_type ); ?>" <?php checked( 1, $value ); ?> value="1">
 		<?php
 	}
 

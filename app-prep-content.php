@@ -70,6 +70,12 @@ class AppOrPrepp {
 				return $content;
 			}
 		}
+
+		$display_if_single = absint( get_option( 'display_if_single_post', 1 ) );
+		if ( $display_if_single && ! is_single() ) {
+			return $content;
+		}
+
 		$prepend = get_option( 'prepend_' . $post_type, '' );
 		$append  = get_option( 'append_' . $post_type, '' );
 
