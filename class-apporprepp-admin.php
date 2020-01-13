@@ -69,7 +69,7 @@ class AppOrPrepp_Admin {
 				'display_in_single_' . $post_type . '',
 				'<label for="display_in_single_' . $post_type . '">'
 				// translators: %s is the post type name.
-				. sprintf( _x( 'Display content only when viewing a single %s', '%s is the post type', 'apporprepp' ), $object->labels->singular_name )
+				. sprintf( _x( 'Display content when viewing a single %s', '%s is the post type', 'apporprepp' ), $object->labels->singular_name )
 				. '</label>',
 				array( $this, 'display_if_single' ),
 				'writing',
