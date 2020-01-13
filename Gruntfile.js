@@ -43,6 +43,7 @@ module.exports = function( grunt ) {
 			options: {
 				type: 'wp-plugin',
 				domainPath: 'languages',
+        exclude: [ 'node_modules/*', 'vendor/*', 'tests/*', 'build/*', 'svn/*' ]
 			},
 			dist: {
 				options: {

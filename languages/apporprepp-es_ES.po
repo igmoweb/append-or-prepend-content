@@ -4,29 +4,23 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Append or Prepend Content 1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/app-prep-content\n"
-"POT-Creation-Date: 2020-01-13 07:32:57+00:00\n"
+"POT-Creation-Date: 2020-01-13 16:43:34+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2020-01-13 07:38+0000\n"
+"PO-Revision-Date: 2020-01-13 16:44+0000\n"
 "Last-Translator: admin <admin@local.test>\n"
-"Language-Team: Spanish (Spain)\n"
+"Language-Team: Español\n"
 "X-Generator: Loco https://localise.biz/\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Language: es_ES\n"
 "X-Loco-Version: 2.3.1; wp-5.4-alpha-47065"
 
-#: build/class-apporprepp-admin.php:21 class-apporprepp-admin.php:21
-#: svn/tags/1.0/admin.php:15 svn/tags/1.1/admin.php:15
-#: svn/tags/1.1.1/admin.php:15 svn/tags/1.2.0/class-apporprepp-admin.php:21
-#: svn/trunk/class-apporprepp-admin.php:21
+#: class-apporprepp-admin.php:21
 msgid "Append or Prepend Content Settings"
 msgstr "Opciones de Append o Prepend Content"
 
-#: build/class-apporprepp-admin.php:102 class-apporprepp-admin.php:119
-#: svn/tags/1.0/admin.php:61 svn/tags/1.1/admin.php:61
-#: svn/tags/1.1.1/admin.php:61 svn/tags/1.2.0/class-apporprepp-admin.php:102
-#: svn/trunk/class-apporprepp-admin.php:102
+#: class-apporprepp-admin.php:120
 msgid ""
 "Allows you to append or prepend content to any Post Type on your site. "
 "Shortcodes allowed."
@@ -56,34 +50,26 @@ msgstr ""
 msgid "http://igmoweb.com"
 msgstr ""
 
-#: build/class-apporprepp-admin.php:36 class-apporprepp-admin.php:36
-#: svn/tags/1.0/admin.php:28 svn/tags/1.1/admin.php:28
-#: svn/tags/1.1.1/admin.php:28 svn/tags/1.2.0/class-apporprepp-admin.php:36
-#: svn/trunk/class-apporprepp-admin.php:36
+#: class-apporprepp-admin.php:36
 msgctxt "%s is the post type"
 msgid "Prepend content to %s"
 msgstr "Agregar contenido previo a %s"
 
-#: build/class-apporprepp-admin.php:48 class-apporprepp-admin.php:48
-#: svn/tags/1.0/admin.php:37 svn/tags/1.1/admin.php:37
-#: svn/tags/1.1.1/admin.php:37 svn/tags/1.2.0/class-apporprepp-admin.php:48
-#: svn/trunk/class-apporprepp-admin.php:48
+#: class-apporprepp-admin.php:48
 msgctxt "%s is the post type"
 msgid "Append content to %s"
 msgstr "Agregar contenido a %s"
 
 #. translators: %s is the post type.
-#: build/class-apporprepp-admin.php:60 class-apporprepp-admin.php:60
-#: svn/tags/1.2.0/class-apporprepp-admin.php:60
-#: svn/trunk/class-apporprepp-admin.php:60
+#: class-apporprepp-admin.php:60
 msgctxt "%s is the post type"
 msgid "Display content for %s in the archive, search or author pages"
 msgstr ""
 "Muestra contenido para el tipo %s en las páginas de archivo, búsqueda o "
 "páginas de autor"
 
-#. translators: %s is the post type.
-#: class-apporprepp-admin.php:71
+#. translators: %s is the post type name.
+#: class-apporprepp-admin.php:72
 msgctxt "%s is the post type"
-msgid "Display content only when viewing a single %s"
-msgstr "Muestra contenido sólo cuando se visualiza un/una %s particular"
+msgid "Display content when viewing a single %s"
+msgstr "Mostrar contenido al mostrar un/a %s en particular"
