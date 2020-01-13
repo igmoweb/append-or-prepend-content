@@ -71,8 +71,8 @@ class AppOrPrepp {
 			}
 		}
 
-		$display_if_single = absint( get_option( 'display_if_single_post', 1 ) );
-		if ( $display_if_single && ! is_single() ) {
+		$display_in_single = absint( get_option( 'display_in_single_' . $post_type, 1 ) );
+		if ( is_singular( $post_type ) && ! $display_in_single ) {
 			return $content;
 		}
 

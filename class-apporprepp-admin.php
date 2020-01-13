@@ -66,8 +66,8 @@ class AppOrPrepp_Admin {
 			);
 
 			add_settings_field(
-				'display_if_single_' . $post_type . '',
-				'<label for="display_if_single_' . $post_type . '">'
+				'display_in_single_' . $post_type . '',
+				'<label for="display_in_single_' . $post_type . '">'
 				. sprintf( _x( 'Display content only when viewing a single %s', '%s is the post type', 'apporprepp' ), $object->labels->name )
 				. '</label>',
 				array( $this, 'display_if_single' ),
@@ -104,7 +104,7 @@ class AppOrPrepp_Admin {
 
 			register_setting(
 				'writing',
-				'display_if_single_' . $post_type,
+				'display_in_single_' . $post_type,
 				array( $this, 'validate_display' )
 			);
 		}
@@ -170,9 +170,9 @@ class AppOrPrepp_Admin {
 	 */
 	public function display_if_single( $args ) {
 		$post_type = $args['post_type'];
-		$value     = absint( get_option( 'display_if_single_' . $post_type, 1 ) );
+		$value     = absint( get_option( 'display_in_single_' . $post_type, 1 ) );
 		?>
-		<input type="checkbox" name="display_if_single_<?php echo esc_attr( $post_type ); ?>" id="display_if_single_<?php echo esc_attr( $post_type ); ?>" <?php checked( 1, $value ); ?> value="1">
+		<input type="checkbox" name="display_in_single_<?php echo esc_attr( $post_type ); ?>" id="display_in_single_<?php echo esc_attr( $post_type ); ?>" <?php checked( 1, $value ); ?> value="1">
 		<?php
 	}
 
