@@ -64,6 +64,7 @@ class AppOrPrepp {
 	public function the_content( $content ) {
 		$post      = get_post();
 		$post_type = get_post_type( $post );
+
 		if ( is_archive() || is_search() ) {
 			$display_in_archive = absint( get_option( 'display_in_archive_' . $post_type, 1 ) );
 			if ( ! $display_in_archive ) {
