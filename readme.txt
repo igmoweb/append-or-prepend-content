@@ -6,7 +6,7 @@ Tested up to: %%testedupto%%
 Stable tag: %%version%%
 License: GPLv2 or later
 
-Add content before or after every post, page or Custom Post Type
+Add content before or after every post, page or Custom Post Type.
 
 == Description ==
 Append or Prepend Content allows you to append or prepend content to any Post Type on your site. You can even use shortcodes or HTML.
@@ -21,6 +21,9 @@ Append or Prepend Content allows you to append or prepend content to any Post Ty
 1. **Plugin Settings**
 
 == Changelog ==
+= 1.3 =
+Added option to display/hide content in single posts/pages
+
 = 1.2 =
 Added option to display/hide content in archive pages
 
