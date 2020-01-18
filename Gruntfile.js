@@ -95,6 +95,7 @@ module.exports = function( grunt ) {
 							'!.gitignore',
 							'!node_modules/**/*',
 							'!vendor/**/*',
+							'!docker-compose.yml',
 							'!bin/**/*',
 							'!composer.*',
 							'!package.*',
