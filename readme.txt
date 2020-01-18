@@ -22,8 +22,9 @@ Append or Prepend Content allows you to append or prepend content to any Post Ty
 
 == Changelog ==
 = 1.3.1 =
+Fix: Content was displayed at blog page even if archive option was not selected
+Fix: Spanish translation
 Added new filter to prevent content display
-Fixed translation
 
 = 1.3 =
 Added option to display/hide content in single posts/pages
