@@ -90,6 +90,8 @@ module.exports = function( grunt ) {
 						expand: true,
 						src: [
 							'**/**.*',
+							'!phpunit.xml.dist',
+							'!tests/**/*',
 							'!.gitignore',
 							'!node_modules/**/*',
 							'!vendor/**/*',
