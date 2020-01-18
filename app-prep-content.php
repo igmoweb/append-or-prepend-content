@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Append or Prepend Content
  * Description: Add content before or after every post, page or Custom Post Type
- * Plugin URI: https://wordpress.org/plugins/app-prep-content
+ * Plugin URI: https://wordpress.org/plugins/append-or-prepend-content
  * Version: %%version%%
  * Author: igmoweb
  * Author URI: http://igmoweb.com
