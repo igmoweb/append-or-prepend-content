@@ -7,12 +7,12 @@
     }
   ],
   "require-dev": {
-    "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
-    "phpcompatibility/phpcompatibility-wp": "^2.0",
+    "dealerdirect/phpcodesniffer-composer-installer": "^0.7",
+    "phpcompatibility/phpcompatibility-wp": "^2.1",
     "phpunit/phpunit": "^6.5",
-    "wp-coding-standards/wpcs": "^2.1",
-    "wp-phpunit/wp-phpunit": "^5.3",
-    "wordpress/wordpress": "^5.3"
+    "wp-coding-standards/wpcs": "^2.3",
+    "wp-phpunit/wp-phpunit": "^5.8",
+    "wordpress/wordpress": "^5.8"
   },
   "scripts": {
     "phpcs:fix": "./vendor/bin/phpcbf --standard=phpcs.xml .",
