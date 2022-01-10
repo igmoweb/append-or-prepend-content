@@ -1,5 +1,5 @@
 === Append or Prepend Content ===
-Contributors: igmoweb, alexandernst
+Contributors: igmoweb
 Tags: content,posts,custom post type
 Requires at least: %%requires%%
 Tested up to: %%testedupto%%
