@@ -1,0 +1,13 @@
+build
+build-wporg
+coverage
+bin
+assets-wporg
+docker
+inc
+languages
+node_modules
+svn
+tests
+vendor
+package-lock.json
