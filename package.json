@@ -53,7 +53,7 @@
 	},
 	"testedupto": "5.9",
 	"requires": "5.7",
-	"requires_php": "7.4",
+	"requires_php": "7.3",
 	"dependencies": {
 		"@wordpress/edit-post": "^5.0.17",
 		"@wordpress/plugins": "^4.0.6"

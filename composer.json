@@ -23,5 +23,10 @@
 			"type": "git",
 			"url": "https://github.com/WordPress/wordpress-develop.git"
 		}
-	]
+	],
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	}
 }
