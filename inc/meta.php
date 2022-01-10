@@ -6,6 +6,7 @@
 namespace AppOrPrepend\Meta;
 
 use AppOrPrepend\PostType;
+use AppOrPrepend\Content;
 
 const ACTION_META          = 'apporprep_action';
 const POST_TYPE_META       = 'apporprep_post_type';
@@ -94,14 +95,7 @@ function sanitize_action( $value ): string {
  * @return mixed|string
  */
 function sanitize_post_type( $value ) {
-	$types = array_filter(
-		get_post_types( array( 'show_in_rest' => true ), 'objects' ),
-		function( $post_type ) {
-			return ( is_post_type_viewable( $post_type ) && 'attachment' !== $post_type->name );
-		}
-	);
-
-	return in_array( $value, wp_list_pluck( $types, 'name' ), true ) ? $value : '';
+	return in_array( $value, Content\get_allowed_post_types(), true ) ? $value : '';
 }
 
 /**

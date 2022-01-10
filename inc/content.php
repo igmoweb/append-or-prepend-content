@@ -20,6 +20,22 @@ function init() {
 }
 
 /**
+ * List of allowed post types to append/prepend content.
+ *
+ * @return array
+ */
+function get_allowed_post_types(): array {
+	$types = array_filter(
+		get_post_types( array( 'public' => true ), 'objects' ),
+		function( $post_type ) {
+			return ( is_post_type_viewable( $post_type ) && 'attachment' !== $post_type->name );
+		}
+	);
+
+	return wp_list_pluck( $types, 'name' );
+}
+
+/**
  * Display content before or after
  *
  * @param mixed $content The post content.
