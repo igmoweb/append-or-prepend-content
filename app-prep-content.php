@@ -9,6 +9,8 @@
  * Text Domain: apporprepp
  * Domain path: /languages
  * License: GPLv2 or later (license.txt)
+ * Requires PHP: 7.4
+ * Requires at least: 5.8
  */
 
 namespace AppOrPrepend;

@@ -68,6 +68,5 @@ function maybe_upgrade() {
 			delete_option( 'prepend_' . $post_type );
 			delete_option( 'append_' . $post_type );
 		}
-		die();
 	}
 }
