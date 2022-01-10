@@ -12,6 +12,10 @@ use AppOrPrepend\Meta;
  * Hooks initialization.
  */
 function init() {
+	if ( is_admin() ) {
+		return;
+	}
+
 	add_filter( 'the_content', __NAMESPACE__ . '\\the_content' );
 }
 

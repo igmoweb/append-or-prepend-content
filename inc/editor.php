@@ -18,8 +18,12 @@ function init() {
  * Enqueue editor assets.
  */
 function enqueue_editor_assets() {
+	if ( get_post_type() !== AppOrPrepend\PostType\POST_TYPE ) {
+		return;
+	}
+
 	$asset_file = include AppOrPrepend\app_or_prep_dir() . 'build/index.asset.php';
-	$deps       = array_merge( $asset_file['dependencies'], array( 'wp-element', 'wp-plugins', 'wp-element' ) );
+	$deps       = array_merge( $asset_file['dependencies'], [ 'wp-element', 'wp-plugins', 'wp-element' ] );
 	wp_enqueue_script(
 		'apporprepend-editor',
 		AppOrPrepend\app_or_prep_url() . '/build/index.js',

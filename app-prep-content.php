@@ -18,6 +18,8 @@ use AppOrPrepend\Meta;
 use AppOrPrepend\Editor;
 use AppOrPrepend\Content;
 
+const PLUGIN_VERSION = '2.0.0';
+
 /**
  * Plugin initialization.
  */
@@ -33,6 +35,14 @@ function init() {
 	Meta\init();
 	PostType\init();
 	Editor\init();
+
+	if ( is_admin() ) {
+		include_once plugin_dir_path( __FILE__ ) . '/inc/admin.php';
+		include_once plugin_dir_path( __FILE__ ) . '/inc/upgrade.php';
+		Admin\init();
+
+		add_action( 'admin_init', __NAMESPACE__ . '\\Admin\\maybe_upgrade' );
+	}
 }
 
 /**
