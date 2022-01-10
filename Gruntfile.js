@@ -1,11 +1,10 @@
-module.exports = function( grunt ) {
-	require( 'load-grunt-tasks' )( grunt );
-	grunt.loadNpmTasks( 'grunt-contrib-copy' );
+module.exports = function (grunt) {
+	require('load-grunt-tasks')(grunt);
+	grunt.loadNpmTasks('grunt-contrib-copy');
 
-	grunt.initConfig( {
+	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		checktextdomain: {
-
 			options: {
 				report_missing: false,
 				text_domain: 'apporprepp',
@@ -33,7 +32,7 @@ module.exports = function( grunt ) {
 					'!./node_modules/**/*',
 					'!./svn/**/*',
 					'!./assets-wporg/**/*',
-					'!./build/**/*',
+					'!./build-wporg/**/*',
 				],
 				expand: true,
 			},
@@ -43,7 +42,13 @@ module.exports = function( grunt ) {
 			options: {
 				type: 'wp-plugin',
 				domainPath: 'languages',
-        exclude: [ 'node_modules/*', 'vendor/*', 'tests/*', 'build/*', 'svn/*' ]
+				exclude: [
+					'node_modules/*',
+					'vendor/*',
+					'tests/*',
+					'build-wporg/*',
+					'svn/*',
+				],
 			},
 			dist: {
 				options: {
@@ -52,35 +57,39 @@ module.exports = function( grunt ) {
 			},
 		},
 
-		"regex-replace": {
-			placeholders: { //specify a target with any name
+		'regex-replace': {
+			placeholders: {
+				//specify a target with any name
 				src: [
-					'./build/readme.txt',
-					'./build/app-prep-content.php',
+					'./build-wporg/readme.txt',
+					'./build-wporg/app-prep-content.php',
 				],
 				actions: [
 					{
 						name: 'version',
 						search: '%%version%%',
 						replace: '<%= pkg.version %>',
-						flags: 'g'
-					},{
+						flags: 'g',
+					},
+					{
 						name: 'testedupto',
 						search: '%%testedupto%%',
 						replace: '<%= pkg.testedupto %>',
-						flags: 'g'
-					},{
+						flags: 'g',
+					},
+					{
 						name: 'requires',
 						search: '%%requires%%',
 						replace: '<%= pkg.requires %>',
-						flags: 'g'
-					}
-				]
-			}
+						flags: 'g',
+					},
+				],
+			},
 		},
 
 		shell: {
-			command: 'svn co https://plugins.svn.wordpress.org/append-or-prepend-content svn'
+			command:
+				'svn co https://plugins.svn.wordpress.org/append-or-prepend-content svn',
 		},
 
 		copy: {
@@ -102,11 +111,11 @@ module.exports = function( grunt ) {
 							'!package-lock*',
 							'!phpcs.xml',
 							'!Gruntfile.js',
-							'!build/**/*',
+							'!build-wporg/**/*',
 							'!svn/**/*',
 							'!assets-wporg/**/*',
 						],
-						dest: 'build/',
+						dest: 'build-wporg/',
 					},
 				],
 			},
@@ -114,44 +123,32 @@ module.exports = function( grunt ) {
 				files: [
 					{
 						expand: true,
-						src: [
-							'**/*.*'
-						],
+						src: ['**/*.*'],
 						dest: 'svn/trunk/',
-						cwd: 'build/'
+						cwd: 'build-wporg/',
 					},
 					{
 						expand: true,
-						src: [
-							'**/*.*'
-						],
+						src: ['**/*.*'],
 						dest: 'svn/tags/<%= pkg.version %>',
-						cwd: 'build/'
+						cwd: 'build-wporg/',
 					},
 					{
 						expand: true,
-						src: [
-							'**/*.*'
-						],
+						src: ['**/*.*'],
 						dest: 'svn/assets/',
-						cwd: 'assets-wporg/'
-					}
-				]
-			}
+						cwd: 'assets-wporg/',
+					},
+				],
+			},
 		},
 		clean: {
-			build: [
-				'build'
-			],
-			svn: [
-				'svn/tags/<%= pkg.version %>',
-				'svn/trunk/',
-				'svn/assets/'
-			],
-		}
-	} );
+			build: ['build-wporg'],
+			svn: ['svn/tags/<%= pkg.version %>', 'svn/trunk/', 'svn/assets/'],
+		},
+	});
 
-	grunt.registerTask( 'default', [
+	grunt.registerTask('default', [
 		'checktextdomain',
 		'makepot',
 		'clean:build',
@@ -159,8 +156,8 @@ module.exports = function( grunt ) {
 		'regex-replace:placeholders',
 		'shell',
 		'clean:svn',
-		'copy:svn'
-	] );
+		'copy:svn',
+	]);
 
-	grunt.registerTask( 'dopot', 'makepot' );
-}
+	grunt.registerTask('dopot', 'makepot');
+};
