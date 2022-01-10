@@ -1,20 +1,20 @@
 version: '3'
 services:
-  mysql:
-    image: mysql:5
-    restart: always
-    ports:
-      - "3306:3306"
-    environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpress
-      MYSQL_PASSWORD: password
-  phpfpm:
-    build: ./docker/phpfpm
-    depends_on:
-      - mysql
-    volumes:
-      - "./:/var/www/html"
-      - ./docker
-    restart: always
+    mysql:
+        image: mysql:5
+        restart: always
+        ports:
+            - '3306:3306'
+        environment:
+            MYSQL_ROOT_PASSWORD: password
+            MYSQL_DATABASE: wordpress
+            MYSQL_USER: wordpress
+            MYSQL_PASSWORD: password
+    phpfpm:
+        build: ./docker/phpfpm
+        depends_on:
+            - mysql
+        volumes:
+            - './:/var/www/html'
+            - ./docker
+        restart: always
