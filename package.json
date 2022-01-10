@@ -51,8 +51,8 @@
 			"git add"
 		]
 	},
-	"testedupto": "5.3.2",
-	"requires": "4.0",
+	"testedupto": "5.9",
+	"requires": "5.7",
 	"requires_php": "7.4",
 	"dependencies": {
 		"@wordpress/edit-post": "^5.0.17",

@@ -83,6 +83,12 @@ module.exports = function (grunt) {
 						replace: '<%= pkg.requires %>',
 						flags: 'g',
 					},
+					{
+						name: 'requires_php',
+						search: '%%requires_php%%',
+						replace: '<%= pkg.requires_php %>',
+						flags: 'g',
+					},
 				],
 			},
 		},
