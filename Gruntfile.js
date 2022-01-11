@@ -27,7 +27,7 @@ module.exports = function (grunt) {
 			},
 			files: {
 				src: [
-					'./**/*.php', // Include all files
+					'./**/*.{php,js}', // Include all files
 					'!./vendor/**/*',
 					'!./node_modules/**/*',
 					'!./svn/**/*',
