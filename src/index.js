@@ -18,14 +18,14 @@ const AppOrPrepOptionsPanel = () => {
 	return (
 		<PluginDocumentSettingPanel
 			name="apporprepend-panel"
-			title="Append or Prepend Options"
+			title={__('Append or Prepend Options', 'apporprepp')}
 			opened
 		>
 			{isNewPost ? (
 				<p>
 					{__(
 						'Please, save the post first in order to select an action.',
-						'appor'
+						'apporprepp'
 					)}
 				</p>
 			) : (
