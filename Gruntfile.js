@@ -37,25 +37,6 @@ module.exports = function (grunt) {
 				expand: true,
 			},
 		},
-		// Generate POT files.
-		makepot: {
-			options: {
-				type: 'wp-plugin',
-				domainPath: 'languages',
-				exclude: [
-					'node_modules/*',
-					'vendor/*',
-					'tests/*',
-					'build-wporg/*',
-					'svn/*',
-				],
-			},
-			dist: {
-				options: {
-					potFilename: 'apporprepp.pot',
-				},
-			},
-		},
 
 		'regex-replace': {
 			placeholders: {

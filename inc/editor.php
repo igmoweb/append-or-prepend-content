@@ -23,7 +23,7 @@ function enqueue_editor_assets() {
 	}
 
 	$asset_file = include AppOrPrepend\app_or_prep_dir() . 'build/index.asset.php';
-	$deps       = array_merge( $asset_file['dependencies'], [ 'wp-element', 'wp-plugins', 'wp-element' ] );
+	$deps       = array_merge( $asset_file['dependencies'], [ 'wp-element', 'wp-plugins', 'wp-i18n' ] );
 	wp_enqueue_script(
 		'apporprepend-editor',
 		AppOrPrepend\app_or_prep_url() . '/build/index.js',
@@ -31,4 +31,6 @@ function enqueue_editor_assets() {
 		$asset_file['version'],
 		true
 	);
+
+	wp_set_script_translations( 'apporprepend-editor', 'apporprepp' );
 }
