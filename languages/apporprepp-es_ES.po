@@ -1,0 +1,177 @@
+# Copyright (C) 2022 igmoweb
+# This file is distributed under the GPLv2 or later (license.txt).
+msgid ""
+msgstr ""
+"Project-Id-Version: Append or Prepend Content %%version%%\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/append-or-prepend-"
+"content\n"
+"Last-Translator: \n"
+"Language-Team: Español\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2022-01-11T19:37:21+00:00\n"
+"PO-Revision-Date: 2022-01-12 15:45+0000\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Domain: apporprepp\n"
+"Language: es-ES\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Loco-Version: 2.5.5; wp-5.8.3"
+
+#: src/components/PostTypeControl.js:28
+msgid "-- Select a post type --"
+msgstr "Ver contenido agregado"
+
+#: src/components/ActionControl.js:9
+msgid "Action"
+msgstr "Agregar contenido previo/posterior"
+
+#: src/components/PostTypeControl.js:18
+msgctxt ""
+"Action to perform on a post type. i.e. Append to/Prepend to where %s is the "
+"post type"
+msgid "%s to "
+msgstr "%s a "
+
+#. Description of the plugin
+msgid "Add content before or after every post, page or Custom Post Type"
+msgstr ""
+"Añade contenido antes o después de cada entrada, página o tipo de post "
+"personalizado"
+
+#: inc/admin.php:54
+msgid "Add new"
+msgstr "Añadir nuevo"
+
+#: inc/post-type.php:34
+msgid "Add New Append or Prepend Content"
+msgstr "Añadir nuevo contenido previo/posterior"
+
+#: inc/admin.php:50
+msgid "Add new content to append/prepend"
+msgstr "Añadir nuevo contenido previo/posterior"
+
+#: inc/post-type.php:32
+msgctxt "add new post-type on admin bar"
+msgid "Append or Prepend Content"
+msgstr ""
+
+#: inc/post-type.php:31
+msgctxt "admin menu"
+msgid "Append Content"
+msgstr "Anexar contenido"
+
+#: inc/post-type.php:42
+msgid "All Append or Prepend Contents"
+msgstr "Todos los contenidos previos/posteriores agregados"
+
+#: src/components/ActionControl.js:21
+msgid "Append"
+msgstr "Anexar"
+
+#. Plugin Name of the plugin
+#: inc/admin.php:23
+msgid "Append or Prepend Content"
+msgstr ""
+
+#: src/index.js:21
+msgid "Append or Prepend Options"
+msgstr "Opciones de Append Or Prepend Content"
+
+#: src/components/ArchiveControl.js:11
+msgid "Display in archives"
+msgstr "Mostrar en páginas de archivo"
+
+#: src/components/SinglePostControl.js:9
+msgid "Display in single post"
+msgstr "Mostrar en entrada individual"
+
+#: inc/post-type.php:35
+msgid "Edit Append or Prepend Content"
+msgstr "Editar contenido previo/posterior"
+
+#. Author URI of the plugin
+msgid "http://igmoweb.com"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://wordpress.org/plugins/append-or-prepend-content"
+msgstr ""
+
+#: src/components/ArchiveControl.js:12
+msgid ""
+"If the content should appear when a list of posts is retrieved (in search, "
+"archives...). Does not apply in excerpts"
+msgstr ""
+"Si la opción está activada, el contenido aparecerá cuando la lista de "
+"entradas (en el blog, búsqueda, archivos...) se muestra en pantalla. No "
+"aplica a los extractos."
+
+#: src/components/SinglePostControl.js:10
+msgid "If the content should appear when a single post is retrieved"
+msgstr ""
+"Si la opción está activada, el contenido aparecerá en una entrada individual"
+
+#. Author of the plugin
+msgid "igmoweb"
+msgstr ""
+
+#: inc/post-type.php:36
+msgid "New Append or Prepend Content"
+msgstr "Nuevo contenido a agregar"
+
+#: inc/post-type.php:40
+msgid "No posts found in Trash."
+msgstr "No se encontró contenido en la papelera."
+
+#: inc/post-type.php:39
+msgid "No posts found."
+msgstr "No se encontró contenido."
+
+#: inc/post-type.php:41
+msgid "Parent Append or Prepend Content:"
+msgstr ""
+
+#: src/index.js:26
+msgid "Please, save the post first in order to select an action."
+msgstr "Por favor, guarde el contenido antes de seleccionar una opción."
+
+#: inc/post-type.php:29
+msgctxt "post type general name"
+msgid "Append or Prepend Content"
+msgstr ""
+
+#: inc/post-type.php:30
+msgctxt "post type singular name"
+msgid "Append or Prepend Content"
+msgstr ""
+
+#: inc/post-type.php:33
+msgctxt "post_type"
+msgid "Add New"
+msgstr "Añadir nuevo"
+
+#: src/components/ActionControl.js:20
+msgid "Prepend"
+msgstr "Agregar antes"
+
+#: inc/post-type.php:38
+msgid "Search Append or Prepend Content"
+msgstr "Buscar contenido agregado."
+
+#: src/components/ActionControl.js:13
+msgctxt "select an action: prepend/append"
+msgid "-- Select an option --"
+msgstr "-- Seleccione una opción --"
+
+#: inc/admin.php:44
+msgid "View"
+msgstr "Ver"
+
+#: inc/post-type.php:37
+msgid "View Append or Prepend Content"
+msgstr "Ver contenido agregado"
+
+#: inc/admin.php:40
+msgid "View current appended/prepended content"
+msgstr "Ver contenido agregado actual"

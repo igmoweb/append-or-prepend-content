@@ -5,6 +5,7 @@
 	"main": "app-prep-content.php",
 	"scripts": {
 		"build": "run-p build:*",
+		"build:pot": "./vendor/bin/composer run-script pot",
 		"build:scripts": "wp-scripts build",
 		"build:grunt": "grunt",
 		"check-engines": "wp-scripts check-engines",
