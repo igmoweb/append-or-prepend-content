@@ -5,7 +5,8 @@ import { _x, __, sprintf } from '@wordpress/i18n';
 
 const PostTypeControl = () => {
 	const postTypes = (
-		useSelect((select) => select('core').getPostTypes()) || []
+		useSelect((select) => select('core').getPostTypes({ per_page: -1 })) ||
+		[]
 	).filter(
 		({ viewable, slug }) => viewable === true && slug !== 'attachment'
 	);
