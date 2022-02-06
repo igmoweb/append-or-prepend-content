@@ -1,6 +1,6 @@
 {
 	"name": "append-or-prepend-content",
-	"version": "2.0.0",
+	"version": "2.0.1",
 	"description": "=== Append or Prepend Content === Contributors: igmoweb Tags: content,posts,custom post type Requires at least: 4.0 Tested up to: 5.2 Stable tag: 1.2 License: GPLv2 or later",
 	"main": "app-prep-content.php",
 	"scripts": {

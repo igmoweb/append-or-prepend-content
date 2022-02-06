@@ -21,6 +21,13 @@ Append or Prepend Content allows you to append or prepend content to any Post Ty
 1. **Plugin Settings**
 
 == Changelog ==
+
+= 2.0.1 =
+Fix: Some post types were not appearing in the post type selector.
+
+= 2.0 =
+Edit the appended/prepended code in Block Editor
+
 = 1.3.1 =
 Fix: Content was displayed at blog page even if archive option was not selected
 Fix: Spanish translation
