@@ -68,6 +68,7 @@ module.exports = function (grunt) {
 							'!build-wporg/**/*',
 							'!svn/**/*',
 							'!assets-wporg/**/*',
+							'!README.md',
 						],
 						dest: 'build-wporg/',
 					},
@@ -110,6 +111,4 @@ module.exports = function (grunt) {
 		'clean:svn',
 		'copy:svn',
 	]);
-
-	grunt.registerTask('dopot', 'makepot');
 };

@@ -16,7 +16,7 @@ function init() {
 		return;
 	}
 
-	add_filter( 'the_content', __NAMESPACE__ . '\\the_content' );
+	add_filter( 'the_content', __NAMESPACE__ . '\\add_content' );
 }
 
 /**
@@ -42,7 +42,7 @@ function get_allowed_post_types(): array {
  *
  * @return mixed
  */
-function the_content( $content ) {
+function add_content( $content ) {
 
 	if ( ! apply_filters( 'app_or_prepend.display_content', true ) ) {
 		return $content;
@@ -78,7 +78,13 @@ function the_content( $content ) {
 			$action = $meta[ Meta\ACTION_META ];
 
 			setup_postdata( $app_or_prep_post->ID );
-			$extra_content = get_the_content( $app_or_prep_post->ID );
+
+			ob_start();
+			add_filter( 'app_or_prepend.display_content', '__return_false' );
+			the_content();
+			add_filter( 'app_or_prepend.display_content', '__return_true' );
+			$extra_content = ob_get_clean();
+
 			wp_reset_postdata();
 
 			$content = $action === 'prepend' ? $extra_content . $content : $content . $extra_content;

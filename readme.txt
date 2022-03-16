@@ -23,6 +23,13 @@ Append or Prepend Content allows you to append or prepend content and blocks to 
 2. **Creating content**
 
 == Changelog ==
+
+= 2.0.2 =
+Fix: Some blocks were not properly parsed when appending or prepending content.
+
+= 2.0.1 =
+Fix: Some post types were not appearing in the post type selector.
+
 = 2.0 =
 Edit the appended/prepended code in Block Editor
 
