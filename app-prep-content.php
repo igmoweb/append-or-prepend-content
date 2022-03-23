@@ -20,7 +20,7 @@ use AppOrPrepend\Meta;
 use AppOrPrepend\Editor;
 use AppOrPrepend\Content;
 
-const PLUGIN_VERSION = '2.1';
+const PLUGIN_VERSION = '2.1.0';
 
 /**
  * Plugin initialization.

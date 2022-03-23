@@ -24,7 +24,7 @@ Append or Prepend Content allows you to append or prepend content and blocks to 
 
 == Changelog ==
 
-= 2.1 =
+= 2.1.0 =
 Fix: Error that was causing an endless loop when the content was rendered under certain circumstances.
 New: Submenu item under Settings menu for easier access to the content.
 New: Quicklink from plugins page.
