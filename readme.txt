@@ -24,6 +24,9 @@ Append or Prepend Content allows you to append or prepend content and blocks to 
 
 == Changelog ==
 
+= 2.0.3 =
+Fix: Error that was causing an endless loop when the content was rendered under certain circumstances.
+
 = 2.0.2 =
 Fix: Some blocks were not properly parsed when appending or prepending content.
 
