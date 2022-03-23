@@ -48,6 +48,8 @@ function add_content( $content ) {
 		return $content;
 	}
 
+	remove_filter( 'the_content', __NAMESPACE__ . '\\add_content' );
+
 	$post      = get_post();
 	$post_type = get_post_type( $post );
 
@@ -80,9 +82,7 @@ function add_content( $content ) {
 			setup_postdata( $app_or_prep_post->ID );
 
 			ob_start();
-			add_filter( 'app_or_prepend.display_content', '__return_false' );
 			the_content();
-			add_filter( 'app_or_prepend.display_content', '__return_true' );
 			$extra_content = ob_get_clean();
 
 			wp_reset_postdata();
@@ -90,6 +90,8 @@ function add_content( $content ) {
 			$content = $action === 'prepend' ? $extra_content . $content : $content . $extra_content;
 		}
 	}
+
+	add_filter( 'the_content', __NAMESPACE__ . '\\add_content' );
 
 	return $content;
 }
