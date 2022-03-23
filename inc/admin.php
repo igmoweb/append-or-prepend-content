@@ -13,6 +13,7 @@ use AppOrPrepend\PostType;
 function init() {
 	add_action( 'admin_init', __NAMESPACE__ . '\\register_fields' );
 	add_action( 'admin_menu', __NAMESPACE__ . '\\add_settings_submenu' );
+	add_action( 'plugin_row_meta', __NAMESPACE__ . '\\add_plugin_actions', 10, 2 );
 }
 
 /**
@@ -70,4 +71,15 @@ function render_option() {
 		</tbody>
 	</table>
 	<?php
+}
+
+function add_plugin_actions( $plugin_actions, $plugin_file ) {
+	if ( $plugin_file !== 'append-or-prepend-content/app-prep-content.php' ) {
+		return $plugin_actions;
+	}
+
+	$post_type        = PostType\POST_TYPE;
+	$url              = admin_url( "edit.php?post_type=$post_type" );
+	$plugin_actions[] = '<a href="' . esc_url( $url ) . '">Start creating content</a>';
+	return $plugin_actions;
 }

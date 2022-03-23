@@ -16,7 +16,7 @@ Append or Prepend Content allows you to append or prepend content and blocks to 
 1. Visit Plugins > Add New
 2. Search for 'Append or Prepend Content'
 3. Activate Append or Prepend Content from your Plugins page.
-4. Navigate to Settings > Writing and use the Append Or Prepend buttons to start creating appended or prepended content for any of your posts.
+4. Navigate to Settings > Append or Prepend Content to start creating appended or prepended content for any of your posts.
 
 == Screenshots ==
 1. **Plugin Settings**
@@ -24,8 +24,10 @@ Append or Prepend Content allows you to append or prepend content and blocks to 
 
 == Changelog ==
 
-= 2.0.3 =
+= 2.1 =
 Fix: Error that was causing an endless loop when the content was rendered under certain circumstances.
+New: Submenu item under Settings menu for easier access to the content.
+New: Quicklink from plugins page.
 
 = 2.0.2 =
 Fix: Some blocks were not properly parsed when appending or prepending content.
